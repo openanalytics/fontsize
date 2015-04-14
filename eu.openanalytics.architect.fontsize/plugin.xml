@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="eu.openanalytics.architect.fontsize.GlobalKeyListener">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="eu.openanalytics.architect.fontsize.preferences.Preferences">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.ui.preferencePages.Workbench"
+            class="eu.openanalytics.architect.fontsize.preferences.PreferencePage"
+            id="eu.openanalytics.architect.fontsize"
+            name="Font Zoom">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="eu.openanalytics.architect.fontsize"
+            defaultHandler="eu.openanalytics.architect.fontsize.cmd.IncreaseFontSizeHandler"
+            id="eu.openanalytics.architect.fontsize.IncreaseFontSize"
+            name="Increase Font Size">
+      </command>
+      <command
+            categoryId="eu.openanalytics.architect.fontsize"
+            defaultHandler="eu.openanalytics.architect.fontsize.cmd.DecreaseFontSizeHandler"
+            id="eu.openanalytics.architect.fontsize.DecreaseFontSize"
+            name="Decrease Font Size">
+      </command>
+      <command
+            categoryId="eu.openanalytics.architect.fontsize"
+            defaultHandler="eu.openanalytics.architect.fontsize.cmd.ResetFontSizeHandler"
+            id="eu.openanalytics.architect.fontsize.ResetFontSize"
+            name="Reset Font Size">
+      </command>
+      <category
+            id="eu.openanalytics.architect.fontsize"
+            name="Font Zoom">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="eu.openanalytics.architect.fontsize.toolbar">
+            <command
+                  commandId="eu.openanalytics.architect.fontsize.IncreaseFontSize"
+                  icon="icons/increase-font.png"
+                  style="push">
+            </command>
+            <command
+                  commandId="eu.openanalytics.architect.fontsize.DecreaseFontSize"
+                  icon="icons/decrease-font.png"
+                  style="push">
+            </command>
+            <command
+                  commandId="eu.openanalytics.architect.fontsize.ResetFontSize"
+                  icon="icons/reset-font.png"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
