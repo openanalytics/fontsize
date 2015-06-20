@@ -32,7 +32,7 @@
 		</copy>
 		<mkdir dir="${buildDirectory}/features" />
 		<copy todir="${buildDirectory}/features/eu.openanalytics.architect.fontsize">
-			<fileset dir="../eu.openanalytics.architect.fontsize-feature">
+			<fileset dir="../eu.openanalytics.architect.fontsize_feature">
 				<include name="*/**" />
 			</fileset>
 		</copy>
